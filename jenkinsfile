@@ -12,7 +12,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout your source code from version control (e.g., Git)
-                checkout scm
+                 git branch: 'main', url: 'https://github.com/Akshay5596/node-jenkins.git'
             }
         }
         
