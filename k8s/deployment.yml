@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: akshaypatil5596/node:replaceImageTag
+        image: akshaypatil5596/node:20
         ports:
         - containerPort: 3000
