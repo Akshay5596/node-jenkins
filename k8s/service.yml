@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nide-app-service
+  name: node-app-service
 spec:
   type: NodePort
   ports:
