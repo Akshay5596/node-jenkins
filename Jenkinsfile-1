@@ -46,25 +46,25 @@ pipeline {
                     }
       }
     }
-    //java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
-    // stage('Update Deployment File') {
-    //     environment {
-    //         GIT_REPO_NAME = "springboot-k8s"
-    //         GIT_USER_NAME = "Akshay5596"
-    //     }
-    //     steps {
-    //         withCredentials([string(credentialsId: 'github-secret', variable: 'GITHUB_TOKEN')]) {
-    //             sh '''
-    //                 git config user.email "akshay.xyz@gmail.com"
-    //                 git config user.name "akshay patil"
-    //                 BUILD_NUMBER=${BUILD_NUMBER}
-    //                 sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
-    //                 git add java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
-    //                 git commit -m "Update deployment image to version ${BUILD_NUMBER}"
-    //                 git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
-    //             '''
-    //         }
-    //     }
-    // }
+    // java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
+    stage('Update Deployment File') {
+        environment {
+            GIT_REPO_NAME = "node-jenkins"
+            GIT_USER_NAME = "Akshay5596"
+        }
+        steps {
+            withCredentials([string(credentialsId: 'github-secret', variable: 'GITHUB_TOKEN')]) {
+                sh '''
+                    git config user.email "akshay.xyz@gmail.com"
+                    git config user.name "akshay patil"
+                    BUILD_NUMBER=${BUILD_NUMBER}
+                    sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" k8s/deployment.yml
+                    git add k8s/deployment.yml
+                    git commit -m "Update deployment image to version ${BUILD_NUMBER}"
+                    git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
+                '''
+            }
+        }
+    }
   }
 }
