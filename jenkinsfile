@@ -36,10 +36,10 @@ pipeline {
         }
     }
     
-    post {
-        always {
-            // Clean up resources, if needed
-        }
-    }
+    // post {
+    //     always {
+    //         // Clean up resources, if needed
+    //     }
+    // }
 }
 
